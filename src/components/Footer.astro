@@ -1,0 +1,45 @@
+---
+import { property } from '../content/property';
+import Brand from './Brand.astro';
+---
+
+<footer>
+  <div class="footer-inner section-shell">
+    <Brand />
+    <p>Peaceful stays in Ranchi, Jharkhand.</p>
+    <p>© {new Date().getFullYear()} {property.name}</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    padding: 1.8rem 0 5.8rem;
+    background: var(--cream);
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: var(--moss);
+  }
+
+  .footer-inner > p {
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 600;
+    opacity: 0.76;
+  }
+
+  @media (min-width: 760px) {
+    footer {
+      padding-bottom: 1.8rem;
+    }
+
+    .footer-inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+</style>

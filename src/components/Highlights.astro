@@ -1,0 +1,84 @@
+---
+import { property } from '../content/property';
+---
+
+<section id="the-stay" class="highlights">
+  <div class="section-shell">
+    <div class="section-heading">
+      <p class="eyebrow">The feeling of Aathithi Aangan</p>
+      <h2 class="display-heading">Made for <em>slower</em> days.</h2>
+    </div>
+    <div class="highlight-grid">
+      {property.highlights.map((highlight) => (
+        <article>
+          <span>{highlight.number}</span>
+          <h3>{highlight.title}</h3>
+          <p>{highlight.description}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .highlights {
+    padding: 5.75rem 0;
+  }
+
+  .section-heading {
+    max-width: 38rem;
+  }
+
+  h2 {
+    margin: 0.85rem 0 0;
+    color: var(--moss);
+    font-size: clamp(2.5rem, 6vw, 4.4rem);
+    line-height: 0.98;
+  }
+
+  h2 em {
+    color: var(--terracotta);
+    font-weight: 500;
+  }
+
+  .highlight-grid {
+    display: grid;
+    gap: 2.6rem;
+    margin-top: 3.4rem;
+  }
+
+  article {
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--line);
+  }
+
+  article span {
+    color: var(--terracotta);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+
+  h3 {
+    margin: 0.85rem 0 0.65rem;
+    color: var(--moss);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  article p {
+    max-width: 21rem;
+    margin: 0;
+    color: color-mix(in srgb, var(--ink), transparent 25%);
+    font-size: 0.91rem;
+    line-height: 1.7;
+  }
+
+  @media (min-width: 760px) {
+    .highlight-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+  }
+</style>

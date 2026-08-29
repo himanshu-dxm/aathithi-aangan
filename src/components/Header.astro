@@ -1,0 +1,76 @@
+---
+import { property } from '../content/property';
+import Brand from './Brand.astro';
+---
+
+<header class="site-header">
+  <div class="header-inner section-shell">
+    <Brand />
+    <nav aria-label="Primary navigation">
+      <a href="#the-stay">The stay</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="header-book" href={property.airbnbUrl} target="_blank" rel="noreferrer">Book on Airbnb</a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding-block: 1.15rem;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav {
+    display: none;
+    align-items: center;
+    gap: 1.7rem;
+    margin-left: auto;
+  }
+
+  nav a {
+    color: var(--moss);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    color: var(--terracotta-dark);
+  }
+
+  .header-book {
+    display: none;
+    margin-left: 1.3rem;
+    padding: 0.7rem 1rem;
+    color: var(--cream);
+    background: var(--moss);
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 180ms ease, transform 180ms ease;
+  }
+
+  .header-book:hover {
+    background: var(--moss-deep);
+    transform: translateY(-2px);
+  }
+
+  @media (min-width: 760px) {
+    nav,
+    .header-book {
+      display: flex;
+    }
+  }
+</style>

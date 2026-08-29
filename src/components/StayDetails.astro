@@ -1,0 +1,83 @@
+---
+import { property } from '../content/property';
+import Icon from './Icon.astro';
+---
+
+<section class="stay-details" aria-labelledby="stay-details-title">
+  <div class="stay-inner section-shell">
+    <div class="stay-copy">
+      <p class="eyebrow">Your stay, simply</p>
+      <h2 id="stay-details-title" class="display-heading">Space for the<br /><em>important things.</em></h2>
+      <p>Whether you are settling in with family, planning a peaceful break as a couple, or making room for focused work, Aathithi Aangan keeps the experience comfortable and uncomplicated.</p>
+    </div>
+    <ul>
+      {property.stayDetails.map((detail) => (
+        <li><Icon name="check" size={17} />{detail}</li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .stay-details {
+    padding: 5.75rem 0;
+  }
+
+  .stay-inner {
+    display: grid;
+    align-items: center;
+    gap: 2.7rem;
+  }
+
+  h2 {
+    margin: 0.85rem 0 1.25rem;
+    color: var(--moss);
+    font-size: clamp(2.45rem, 6vw, 4.2rem);
+    line-height: 0.98;
+  }
+
+  h2 em {
+    color: var(--terracotta);
+    font-weight: 500;
+  }
+
+  .stay-copy > p:last-child {
+    max-width: 32rem;
+    margin: 0;
+    color: color-mix(in srgb, var(--ink), transparent 22%);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  ul {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--line);
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 0;
+    color: var(--moss);
+    border-bottom: 1px solid var(--line);
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+
+  li :global(svg) {
+    flex: none;
+    color: var(--terracotta);
+  }
+
+  @media (min-width: 760px) {
+    .stay-inner {
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 5rem;
+    }
+  }
+</style>

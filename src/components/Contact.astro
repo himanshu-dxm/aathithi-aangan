@@ -1,0 +1,120 @@
+---
+import { property } from '../content/property';
+import Icon from './Icon.astro';
+---
+
+<section id="contact" class="contact" aria-labelledby="contact-title">
+  <div class="contact-inner section-shell">
+    <div>
+      <p class="eyebrow">Plan your escape</p>
+      <h2 id="contact-title" class="display-heading">A little calm is<br /><em>waiting for you.</em></h2>
+      <p class="contact-copy">For availability and secure booking, use Airbnb. For a quick question, reach out directly.</p>
+      <a class="button-primary" href={property.airbnbUrl} target="_blank" rel="noreferrer">Book on Airbnb <Icon name="arrow" size={17} /></a>
+    </div>
+    <aside aria-label="Contact Aathithi Aangan">
+      <p>Stay in touch</p>
+      <a href={property.whatsappUrl} target="_blank" rel="noreferrer"><Icon name="whatsapp" size={20} /><span><small>WhatsApp</small>{property.phoneDisplay}</span><Icon name="arrow" size={18} /></a>
+      <a href={property.instagramUrl} target="_blank" rel="noreferrer"><Icon name="instagram" size={20} /><span><small>Instagram</small>{property.instagramHandle}</span><Icon name="arrow" size={18} /></a>
+    </aside>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: 5.6rem 0;
+    color: var(--cream);
+    background: var(--moss);
+  }
+
+  .contact-inner {
+    display: grid;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .contact .eyebrow {
+    color: #e9c4a4;
+  }
+
+  h2 {
+    margin: 0.85rem 0 1.2rem;
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    line-height: 0.98;
+  }
+
+  h2 em {
+    color: #e9c4a4;
+    font-weight: 500;
+  }
+
+  .contact-copy {
+    max-width: 28rem;
+    margin: 0 0 1.6rem;
+    font-size: 0.93rem;
+    line-height: 1.75;
+    opacity: 0.84;
+  }
+
+  .contact .button-primary {
+    color: var(--moss);
+    background: #e9c4a4;
+    box-shadow: none;
+  }
+
+  .contact .button-primary:hover {
+    background: var(--cream);
+  }
+
+  aside {
+    padding: 1.25rem 1.35rem;
+    border: 1px solid rgba(247, 242, 232, 0.24);
+    border-radius: 1rem;
+  }
+
+  aside > p {
+    margin: 0 0 0.6rem;
+    color: #e9c4a4;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  aside a {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 1.05rem 0;
+    color: var(--cream);
+    border-top: 1px solid rgba(247, 242, 232, 0.18);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 180ms ease;
+  }
+
+  aside a:hover {
+    color: #e9c4a4;
+  }
+
+  aside span {
+    display: grid;
+    gap: 0.13rem;
+  }
+
+  aside small {
+    color: #e9c4a4;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 760px) {
+    .contact-inner {
+      grid-template-columns: 1.05fr 0.75fr;
+      gap: 7rem;
+    }
+  }
+</style>

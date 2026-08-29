@@ -1,0 +1,43 @@
+---
+import '../styles/global.css';
+import { property } from '../content/property';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'LodgingBusiness',
+  name: property.name,
+  description: property.description,
+  telephone: property.phoneDisplay,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Ranchi',
+    addressRegion: 'Jharkhand',
+    addressCountry: 'IN',
+  },
+  numberOfRooms: 1,
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#40533D" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <slot />
+  </body>
+</html>

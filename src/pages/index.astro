@@ -1,0 +1,25 @@
+---
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import Gallery from '../components/Gallery.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Highlights from '../components/Highlights.astro';
+import PropertyFacts from '../components/PropertyFacts.astro';
+import StayDetails from '../components/StayDetails.astro';
+import { property } from '../content/property';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title={`${property.name} | A peaceful stay in Ranchi`} description={property.description}>
+  <Header />
+  <main id="main-content">
+    <Hero />
+    <PropertyFacts />
+    <Highlights />
+    <Gallery />
+    <StayDetails />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>

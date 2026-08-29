@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title description">
+  <title id="title">Aathithi Aangan brand mark</title>
+  <desc id="description">A minimal courtyard arch framing two leaves, representing a warm green retreat.</desc>
+  <rect width="160" height="160" rx="38" fill="#F7F2E8"/>
+  <path d="M42 119V75.5C42 53.7 59.2 36 80 36s38 17.7 38 39.5V119" fill="none" stroke="#40533D" stroke-linecap="round" stroke-width="8"/>
+  <path d="M35 119h90" fill="none" stroke="#B96849" stroke-linecap="round" stroke-width="8"/>
+  <path d="M57 106c9.3-17.1 20-24.5 31-29 3.8 11.8.7 26.5-10.2 36.4" fill="none" stroke="#40533D" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  <path d="M81 111c6.3-20.5 17.5-31.8 34.1-37.1 1.4 17.3-7 31.3-22.1 39.1" fill="none" stroke="#40533D" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+</svg>
