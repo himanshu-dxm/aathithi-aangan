@@ -22,6 +22,7 @@ pnpm-debug.log*
 
 # local production planning
 PRODUCTION-LAUNCH-GUIDE.md
+GO-LIVE-RUNBOOK.md
 
 # jetbrains setting folder
 .idea/
