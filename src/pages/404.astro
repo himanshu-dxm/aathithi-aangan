@@ -1,0 +1,66 @@
+---
+import Footer from '../components/Footer.astro';
+import Icon from '../components/Icon.astro';
+import { property } from '../content/property';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title={`Page not found | ${property.name}`}
+  description="The page you were looking for could not be found."
+>
+  <main id="main-content" class="notfound">
+    <div class="section-shell notfound-inner">
+      <p class="eyebrow">Error 404</p>
+      <h1 class="display-heading">This path<br /><em>leads nowhere.</em></h1>
+      <p class="notfound-copy">
+        The page you were looking for has moved or never existed. Let's get you back to the calm.
+      </p>
+      <div class="notfound-actions">
+        <a class="button-primary" href="/">Back to home <Icon name="arrow" size={17} /></a>
+        <a class="button-secondary" href={property.airbnbUrl} target="_blank" rel="noreferrer">Book on Airbnb</a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .notfound {
+    display: flex;
+    align-items: center;
+    min-height: 70vh;
+    padding: 7rem 0 4rem;
+    background: linear-gradient(118deg, var(--cream) 0%, var(--cream) 58%, var(--mist) 58%, var(--mist) 100%);
+  }
+
+  .notfound-inner {
+    max-width: 44rem;
+  }
+
+  h1 {
+    margin: 1rem 0 1.2rem;
+    color: var(--moss);
+    font-size: clamp(3rem, 11vw, 6rem);
+    line-height: 0.82;
+  }
+
+  h1 em {
+    color: var(--terracotta);
+    font-weight: 500;
+  }
+
+  .notfound-copy {
+    max-width: 30rem;
+    margin: 0 0 1.75rem;
+    color: color-mix(in srgb, var(--ink), transparent 15%);
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .notfound-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+</style>
