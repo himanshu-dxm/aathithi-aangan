@@ -21,6 +21,12 @@ const structuredData = {
     addressCountry: 'IN',
   },
   numberOfRooms: 1,
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: property.rating,
+    reviewCount: property.reviewsCount,
+    bestRating: 5,
+  },
 };
 ---
 

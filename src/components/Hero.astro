@@ -16,6 +16,16 @@ import Icon from './Icon.astro';
         <a class="button-primary" href={property.airbnbUrl} target="_blank" rel="noreferrer">Book on Airbnb <Icon name="arrow" size={17} /></a>
         <a class="button-secondary" href="#the-stay">Explore the stay</a>
       </div>
+      <a
+        class="hero-rating"
+        href={property.airbnbUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`Rated ${property.rating} out of 5 from ${property.reviewsCount} reviews on Airbnb`}
+      >
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span class="rating-text"><strong>{property.rating}</strong> · {property.reviewsCount} reviews · {property.reviewsNote}</span>
+      </a>
       <p class="location-note"><Icon name="pin" size={16} /> {property.landmark}</p>
     </div>
     <div class="hero-visual">
@@ -78,6 +88,35 @@ import Icon from './Icon.astro';
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+  }
+
+  .hero-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 1.2rem;
+    text-decoration: none;
+  }
+
+  .hero-rating .stars {
+    color: var(--terracotta);
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+  }
+
+  .hero-rating .rating-text {
+    color: var(--moss-deep);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .hero-rating strong {
+    color: var(--moss);
+    font-weight: 700;
+  }
+
+  .hero-rating:hover .rating-text {
+    color: var(--terracotta-dark);
   }
 
   .location-note {
