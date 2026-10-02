@@ -6,10 +6,10 @@ import coffeeImage from '../../images/image-6.avif';
 import terraceImage from '../../images/image-7.avif';
 
 const items = [
-  { src: livingImage, area: 'a', alt: 'Warm and inviting living area with a cosy sofa' },
-  { src: bedroomImage, area: 'b', alt: 'Restful bedroom with a plush headboard and soft evening light' },
-  { src: coffeeImage, area: 'c', alt: 'Coffee corner with floating shelves and a mini-fridge' },
-  { src: terraceImage, area: 'd', alt: 'Open terrace seating with a view of the sunset over the trees' },
+  { src: livingImage, area: 'a', label: 'The living room', alt: 'Warm and inviting living area with a cosy sofa' },
+  { src: bedroomImage, area: 'b', label: 'The bedroom', alt: 'Restful bedroom with a plush headboard and soft evening light' },
+  { src: coffeeImage, area: 'c', label: 'Coffee corner', alt: 'Coffee corner with floating shelves and a mini-fridge' },
+  { src: terraceImage, area: 'd', label: 'Terrace at sunset', alt: 'Open terrace seating with a view of the sunset over the trees' },
 ];
 ---
 
@@ -28,6 +28,7 @@ const items = [
           aria-label={`View photo: ${item.alt}`}
         >
           <Image src={item.src} alt={item.alt} />
+          <span class="gallery-caption">{item.label}</span>
         </button>
       ))}
     </div>
@@ -145,6 +146,7 @@ const items = [
   }
 
   .gallery-item {
+    position: relative;
     min-width: 0;
     margin: 0;
     padding: 0;
@@ -165,6 +167,31 @@ const items = [
 
   .gallery-item:hover :global(img) {
     transform: scale(1.035);
+  }
+
+  .gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    z-index: 0;
+    height: 45%;
+    background: linear-gradient(to top, rgba(26, 33, 27, 0.6), transparent);
+    pointer-events: none;
+  }
+
+  .gallery-caption {
+    position: absolute;
+    z-index: 1;
+    right: 0.9rem;
+    bottom: 0.85rem;
+    left: 0.9rem;
+    color: var(--cream);
+    font-family: var(--font-display);
+    font-size: 0.92rem;
+    font-style: italic;
+    text-align: left;
+    text-shadow: 0 1px 10px rgba(26, 33, 27, 0.65);
+    pointer-events: none;
   }
 
   .gallery-a {
