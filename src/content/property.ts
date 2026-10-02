@@ -1,17 +1,17 @@
 export const property = {
-  name: 'Aathithi Aangan',
+  name: 'Atithi Aangan',
   location: 'Ranchi, Jharkhand',
   landmark: 'Near Royal Retreat, Booty More',
   description:
-    'Aathithi Aangan is a warm, peaceful stay in Ranchi, surrounded by lush greenery and designed for slow, comfortable stays.',
+    'Atithi Aangan is a warm, peaceful stay in Ranchi, surrounded by lush greenery and designed for slow, comfortable stays.',
   tagline: 'A gentle pause, surrounded by green.',
-  airbnbUrl: 'https://github.com/himanshu-dxm',
-  phoneDisplay: '+91 99341 61540',
-  phoneRaw: '919934161540',
-  instagramHandle: '@aathithi_aangan',
-  instagramUrl: 'https://www.instagram.com/aathithi_aangan/',
+  airbnbUrl: 'https://www.airbnb.co.uk/rooms/1767383814282390949/',
+  phoneDisplay: '+91 62996 99191',
+  phoneRaw: '916299699191',
+  instagramHandle: '@athithi_aangan',
+  instagramUrl: 'https://www.instagram.com/atithi_aangan/',
   whatsappUrl:
-    'https://wa.me/919934161540?text=Hello%20Aathithi%20Aangan%2C%20I%20would%20like%20to%20know%20more%20about%20the%20stay.',
+    'https://wa.me/916299699191?text=Hello%20Atithi%20Aangan%2C%20I%20would%20like%20to%20know%20more%20about%20the%20stay.',
   facts: [
     { value: '4', label: 'Guests' },
     { value: '1', label: 'Bedroom' },

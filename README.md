@@ -1,6 +1,6 @@
-# Aathithi Aangan
+# Atithi Aangan
 
-A fast, one-page property website for Aathithi Aangan, a peaceful Ranchi stay surrounded by greenery.
+A fast, one-page property website for Atithi Aangan, a peaceful Ranchi stay surrounded by greenery.
 
 ## Stack
 

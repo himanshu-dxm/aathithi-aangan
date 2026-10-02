@@ -6,43 +6,20 @@ interface Props {
 const { href = '/' } = Astro.props;
 ---
 
-<a class="brand" href={href} aria-label="Aathithi Aangan home">
-  <img src="/brand/aathithi-aangan-mark.svg" alt="" width="44" height="44" />
-  <span class="brand-name">
-    <span>Aathithi</span>
-    <strong>Aangan</strong>
-  </span>
+<a class="brand" href={href} aria-label="Atithi Aangan home">
+  <img src="/brand/atithi-aangan-logo.svg" alt="Atithi Aangan" width="120" height="120" />
 </a>
 
 <style>
   .brand {
     display: inline-flex;
     align-items: center;
-    gap: 0.65rem;
     color: var(--moss);
     text-decoration: none;
   }
 
   .brand img {
-    width: 2.65rem;
-    height: 2.65rem;
-  }
-
-  .brand-name {
-    display: flex;
-    flex-direction: column;
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: -0.045em;
-    line-height: 0.82;
-  }
-
-  .brand-name strong {
-    color: var(--terracotta);
-    font-size: 1em;
-    font-style: italic;
-    font-weight: 500;
-    letter-spacing: -0.045em;
+    width: auto;
+    height: 3.4rem;
   }
 </style>
