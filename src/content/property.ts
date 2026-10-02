@@ -44,4 +44,16 @@ export const property = {
     'Open terrace for fresh air and quiet time',
     'A restful choice for families, couples, and workations',
   ],
+  amenities: [
+    { label: 'Fast WiFi', icon: 'wifi' },
+    { label: 'Hot water', icon: 'droplet' },
+    { label: 'Free parking', icon: 'parking' },
+    { label: 'Kitchenette', icon: 'kitchen' },
+    { label: 'Television', icon: 'tv' },
+    { label: 'Work desk', icon: 'desk' },
+    { label: 'Mini-fridge', icon: 'fridge' },
+    { label: 'Power backup', icon: 'power' },
+    { label: 'CCTV security', icon: 'cctv' },
+    { label: 'Open terrace', icon: 'terrace' },
+  ],
 } as const;

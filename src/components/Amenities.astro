@@ -1,0 +1,125 @@
+---
+import { property } from '../content/property';
+
+const icons: Record<string, string> = {
+  wifi: '<path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8 15.3a6 6 0 0 1 8 0"/><path d="M12 18.5h.01"/>',
+  droplet: '<path d="M12 3s6 5.5 6 9.5a6 6 0 0 1-12 0C6 8.5 12 3 12 3Z"/>',
+  parking:
+    '<path d="M4 14.5 5.5 10A2 2 0 0 1 7.4 8.6h9.2A2 2 0 0 1 18.5 10L20 14.5v3a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H7v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3Z"/><path d="M6.5 14.5h.01M17.5 14.5h.01"/>',
+  kitchen:
+    '<path d="M8 3v8M6 3v4a2 2 0 0 0 4 0V3M8 11v10"/><path d="M16 3c-1.4 0-2.4 2-2.4 5s1 5 2.4 5 2.4-2 2.4-5-1-5-2.4-5Z"/><path d="M16 13v8"/>',
+  tv: '<rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/>',
+  desk: '<rect x="4" y="5" width="16" height="10" rx="1.5"/><path d="M2 19h20"/>',
+  fridge: '<rect x="6" y="3" width="12" height="18" rx="2"/><path d="M6 10h12M9 6.2v1.6M9 12.5v3"/>',
+  power: '<path d="M13 3 5 13.5h5l-1 7.5 8-10.5h-5l1-7.5Z"/>',
+  cctv: '<path d="M3 9l11-3 1 4L4 13 3 9Z"/><path d="M15 7.2 20 6M6 13v3.5H3.2"/><circle cx="8.5" cy="10.2" r="0.6"/>',
+  terrace:
+    '<circle cx="12" cy="12" r="3.6"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.5 5.5 7 7M17 17l1.5 1.5M18.5 5.5 17 7M7 17l-1.5 1.5"/>',
+};
+---
+
+<section id="amenities" class="amenities" aria-labelledby="amenities-title">
+  <div class="section-shell">
+    <div class="amenities-heading">
+      <p class="eyebrow">What's included</p>
+      <h2 id="amenities-title" class="display-heading">Thoughtful comforts,<br /><em>all set for you.</em></h2>
+    </div>
+    <ul class="amenities-grid">
+      {property.amenities.map((item) => (
+        <li>
+          <span class="amenity-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              set:html={icons[item.icon]}
+            />
+          </span>
+          <span class="amenity-label">{item.label}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .amenities {
+    padding: 5.75rem 0;
+  }
+
+  .amenities-heading {
+    max-width: 38rem;
+    margin-bottom: 2.8rem;
+  }
+
+  h2 {
+    margin: 0.85rem 0 0;
+    color: var(--moss);
+    font-size: clamp(2.45rem, 6vw, 4.2rem);
+    line-height: 0.98;
+  }
+
+  h2 em {
+    color: var(--terracotta);
+    font-weight: 500;
+  }
+
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .amenities-grid li {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 1rem 1.1rem;
+    background: var(--mist);
+    border: 1px solid var(--line);
+    border-radius: 0.9rem;
+    color: var(--moss);
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+  }
+
+  .amenities-grid li:hover {
+    background: var(--cream);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(38, 49, 40, 0.08);
+  }
+
+  .amenity-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    width: 2.6rem;
+    height: 2.6rem;
+    color: var(--terracotta);
+    background: color-mix(in srgb, var(--terracotta), transparent 88%);
+    border-radius: 50%;
+  }
+
+  @media (min-width: 560px) {
+    .amenities-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 900px) {
+    .amenities-grid {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
+</style>
