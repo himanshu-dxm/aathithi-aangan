@@ -54,6 +54,12 @@ body {
 	background: var(--moss);
 }
 
+/* Offset anchored sections so headings clear the fixed header */
+main section[id],
+#main-content {
+	scroll-margin-top: 5.5rem;
+}
+
 :focus-visible {
 	outline: 3px solid var(--terracotta);
 	outline-offset: 4px;
