@@ -15,6 +15,8 @@ export const property = {
   instagramUrl: 'https://www.instagram.com/atithi_aangan/',
   whatsappUrl:
     'https://wa.me/916299699191?text=Hello%20Atithi%20Aangan%2C%20I%20would%20like%20to%20know%20more%20about%20the%20stay.',
+  mapLink: 'https://maps.app.goo.gl/Enda1cUyKSqM9NYm9',
+  mapEmbedUrl: 'https://www.google.com/maps?q=23.3987607,85.3906679&z=16&output=embed',
   facts: [
     { value: '4', label: 'Guests' },
     { value: '1', label: 'Bedroom' },

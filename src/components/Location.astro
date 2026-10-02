@@ -1,0 +1,118 @@
+---
+import { property } from '../content/property';
+import Icon from './Icon.astro';
+---
+
+<section id="location" class="location" aria-labelledby="location-title">
+  <div class="location-inner section-shell">
+    <div class="location-copy">
+      <p class="eyebrow">Where you'll be</p>
+      <h2 id="location-title" class="display-heading">Easy to find,<br /><em>easy to love.</em></h2>
+      <p class="location-address"><Icon name="pin" size={18} /> {property.landmark}, {property.location}</p>
+      <ul class="location-points">
+        <li><Icon name="check" size={17} /> Budget-friendly comfort, without cutting corners</li>
+        <li><Icon name="check" size={17} /> Quiet, green neighbourhood away from the rush</li>
+        <li><Icon name="check" size={17} /> Convenient base for exploring Ranchi</li>
+      </ul>
+      <a class="button-secondary" href={property.mapLink} target="_blank" rel="noreferrer">
+        Get directions <Icon name="arrow" size={17} />
+      </a>
+    </div>
+    <div class="location-map">
+      <iframe
+        title="Map showing the location of Atithi Aangan in Ranchi"
+        src={property.mapEmbedUrl}
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<style>
+  .location {
+    padding: 5.75rem 0;
+    background: var(--mist);
+  }
+
+  .location-inner {
+    display: grid;
+    align-items: center;
+    gap: 2.6rem;
+  }
+
+  h2 {
+    margin: 0.85rem 0 1.2rem;
+    color: var(--moss);
+    font-size: clamp(2.45rem, 6vw, 4.2rem);
+    line-height: 0.98;
+  }
+
+  h2 em {
+    color: var(--terracotta);
+    font-weight: 500;
+  }
+
+  .location-address {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1.4rem;
+    color: var(--moss-deep);
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+
+  .location-address :global(svg) {
+    flex: none;
+    color: var(--terracotta);
+  }
+
+  .location-points {
+    margin: 0 0 1.8rem;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .location-points li {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: color-mix(in srgb, var(--ink), transparent 18%);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .location-points :global(svg) {
+    flex: none;
+    color: var(--terracotta);
+  }
+
+  .location-map {
+    overflow: hidden;
+    border-radius: 1.2rem 1.2rem 1.2rem 4.5rem;
+    box-shadow: 0 16px 40px rgba(38, 49, 40, 0.12);
+    aspect-ratio: 1.15 / 1;
+  }
+
+  .location-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  @media (min-width: 760px) {
+    .location-inner {
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 4.5rem;
+    }
+
+    .location-map {
+      aspect-ratio: 1.3 / 1;
+    }
+  }
+</style>
