@@ -17,6 +17,13 @@ export const property = {
     'https://wa.me/916299699191?text=Hello%20Atithi%20Aangan%2C%20I%20would%20like%20to%20know%20more%20about%20the%20stay.',
   mapLink: 'https://maps.app.goo.gl/Enda1cUyKSqM9NYm9',
   mapEmbedUrl: 'https://www.google.com/maps?q=23.3987607,85.3906679&z=16&output=embed',
+  checkIn: '11:00 AM',
+  checkOut: '10:00 AM',
+  goodToKnow: [
+    'Check-in from 11:00 AM',
+    'Check-out by 10:00 AM',
+    'Staff-assisted check-in on arrival',
+  ],
   facts: [
     { value: '4', label: 'Guests' },
     { value: '1', label: 'Bedroom' },

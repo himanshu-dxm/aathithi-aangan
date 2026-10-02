@@ -10,9 +10,15 @@ import Icon from './Icon.astro';
       <h2 id="contact-title" class="display-heading">A little calm is<br /><em>waiting for you.</em></h2>
       <p class="contact-copy">For availability and secure booking, use Airbnb. For a quick question, reach out directly.</p>
       <a class="button-primary" href={property.airbnbUrl} target="_blank" rel="noreferrer">Book on Airbnb <Icon name="arrow" size={17} /></a>
+      <ul class="good-to-know" aria-label="Good to know">
+        {property.goodToKnow.map((item) => (
+          <li><Icon name="check" size={16} /> {item}</li>
+        ))}
+      </ul>
     </div>
     <aside aria-label="Contact Atithi Aangan">
       <p>Stay in touch</p>
+      <a href={`tel:+${property.phoneRaw}`}><Icon name="phone" size={20} /><span><small>Call us</small>{property.phoneDisplay}</span><Icon name="arrow" size={18} /></a>
       <a href={property.whatsappUrl} target="_blank" rel="noreferrer"><Icon name="whatsapp" size={20} /><span><small>WhatsApp</small>{property.phoneDisplay}</span><Icon name="arrow" size={18} /></a>
       <a href={property.instagramUrl} target="_blank" rel="noreferrer"><Icon name="instagram" size={20} /><span><small>Instagram</small>{property.instagramHandle}</span><Icon name="arrow" size={18} /></a>
     </aside>
@@ -63,6 +69,28 @@ import Icon from './Icon.astro';
 
   .contact .button-primary:hover {
     background: var(--cream);
+  }
+
+  .good-to-know {
+    display: grid;
+    gap: 0.55rem;
+    margin: 1.8rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .good-to-know li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0.9;
+  }
+
+  .good-to-know :global(svg) {
+    flex: none;
+    color: #e9c4a4;
   }
 
   aside {
