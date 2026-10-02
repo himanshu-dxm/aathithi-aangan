@@ -8,6 +8,9 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const siteUrl = Astro.site ?? new URL('https://atithiaangan.com');
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
+const ogImage = new URL('/og-image.jpg', siteUrl);
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'LodgingBusiness',
@@ -38,7 +41,25 @@ const structuredData = {
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#40533D" />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={property.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${property.name} — a peaceful stay in Ranchi`} />
+    <meta property="og:locale" content="en_IN" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <title>{title}</title>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
   </head>
