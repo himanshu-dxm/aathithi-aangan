@@ -6,8 +6,8 @@ import coffeeImage from '../../images/image-6.avif';
 import terraceImage from '../../images/image-7.avif';
 
 const items = [
-  { src: livingImage, area: 'a', label: 'The living room', alt: 'Warm and inviting living area with a cosy sofa' },
-  { src: bedroomImage, area: 'b', label: 'The bedroom', alt: 'Restful bedroom with a plush headboard and soft evening light' },
+  { src: livingImage, area: 'a', label: 'The bedroom', alt: 'Restful bedroom with a plush headboard and soft evening light' },
+  { src: bedroomImage, area: 'b', label: 'The living room', alt: 'Warm and inviting living area with a cosy sofa' },
   { src: coffeeImage, area: 'c', label: 'Coffee corner', alt: 'Coffee corner with floating shelves and a mini-fridge' },
   { src: terraceImage, area: 'd', label: 'Terrace at sunset', alt: 'Open terrace seating with a view of the sunset over the trees' },
 ];
@@ -250,9 +250,10 @@ const items = [
 
   .lightbox-figure figcaption {
     color: var(--cream);
-    font-family: var(--font-display);
+    font-family: var(--font-sans);
     font-size: 0.95rem;
-    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.01em;
     text-align: center;
   }
 
