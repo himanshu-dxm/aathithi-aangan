@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { property } from '../content/property';
+import { rating } from '../content/rating';
 
 interface Props {
   title: string;
@@ -26,8 +27,8 @@ const structuredData = {
   numberOfRooms: 1,
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: property.rating,
-    reviewCount: property.reviewsCount,
+    ratingValue: rating.value,
+    reviewCount: rating.count,
     bestRating: 5,
   },
 };

@@ -6,8 +6,9 @@ export const property = {
     'Atithi Aangan is a warm, peaceful stay in Ranchi, surrounded by lush greenery and designed for slow, comfortable stays.',
   tagline: 'A gentle pause, surrounded by green.',
   airbnbUrl: 'https://www.airbnb.co.uk/rooms/1767383814282390949/',
+  // Fallback only; live values are fetched from Airbnb at build time (see rating.ts).
   rating: '5.0',
-  reviewsCount: 3,
+  reviewsCount: 6,
   reviewsNote: 'New on Airbnb',
   phoneDisplay: '+91 62996 99191',
   phoneRaw: '916299699191',
