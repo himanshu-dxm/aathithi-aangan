@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  schedule:
-    # Daily rebuild to refresh the Airbnb rating (00:30 UTC = 06:00 IST).
-    - cron: '30 0 * * *'
   workflow_dispatch:
 
 permissions:
